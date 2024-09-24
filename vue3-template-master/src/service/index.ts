@@ -4,6 +4,7 @@ import { AxiosResponse } from 'axios'
 import type { RequestConfig } from './request/types'
 
 export interface YWZResponse<T> {
+
   statusCode: number
   desc: string
   result: T
@@ -15,7 +16,7 @@ interface YWZRequestConfig<T, R> extends RequestConfig<YWZResponse<R>> {
 }
 
 const request = new Request({
-  baseURL: import.meta.env.BASE_URL,
+  baseURL: import.meta.env.VITE_APP_API_BASE_URL,
   timeout: 1000 * 60 * 5,
   interceptors: {
     // 请求拦截器
